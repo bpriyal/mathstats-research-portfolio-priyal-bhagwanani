@@ -42,6 +42,41 @@ The manuscript reports the following synthetic findings:
 | Gauge-invariant classification  |                          about (98%) accuracy using ((n, P_{\mathrm{tot}}, P_{\max}, S_{\mathrm{top}})) | Persistence features are coordinate-free and discriminative |
 | Protein-folding proxy           | (P_{\mathrm{tot}}) drops from about (186.20) to (13.52), with (P_{\max}\approx 0.423) at the final step | Collapse is reflected as barcode simplification             |
 
+## Quantitative Results
+
+### Summary of Numerical Findings
+
+| Experiment | Sample Size | Metric | Control / Baseline | Result | Test Statistic | p-value | Interpretation |
+|---|---:|---|---|---:|---:|---:|---|
+| A. Stratified vs Smooth Landscapes | n = 40 per group | \(P_{\max}\) | Smooth | 1.8668 ± 0.0217 | t = 7.657 | 1.95 × 10^-10 | Stratified landscapes exhibit significantly different topological barrier structure |
+| A. Stratified vs Smooth Landscapes | n = 40 per group | \(P_{\max}\) | Stratified | 1.5779 ± 0.2891 | t = 7.657 | 1.95 × 10^-10 | Higher variance indicates ruggedness / barrier fragmentation |
+| B. Gradient-Flow Topological Cooling | 50 particles, 100 steps | \(P_{\mathrm{tot}}\) | Initial vs Final | 3.70 → 2.00 | monotone decay | — | Total persistence decreases under flow |
+| B. Gradient-Flow Topological Cooling | 50 particles, 100 steps | \(S_{\mathrm{top}}\) | Initial vs Final | 3.689 → 0.000 | monotone decay | — | Persistence entropy collapses under relaxation |
+| C. Gauge-Invariant Classification | 300 point clouds | Accuracy | Raw-coordinate baseline | 98.00% | — | — | Persistence features are highly discriminative under rigid-motion perturbations |
+| D. Protein Folding Proxy (Cα Collapse) | 50 residues, 70 steps | \(P_{\mathrm{tot}}\) | Step 0 vs Step 70 | 186.20 → 13.52 | — | — | Collapse strongly reduces topological complexity |
+| D. Protein Folding Proxy (Cα Collapse) | 50 residues, 70 steps | \(P_{\max}\) | Final state | 0.423 | — | — | Final structure has no dominant long-lived barrier |
+| E. Sector Separation / Clustering | [insert n] | ANOVA / clustering | [insert baseline] | F = 5156 | — | 4.3 × 10^-264 | Strong sector separability in persistence space |
+| E. Sector Separation / Clustering | [insert n] | Adjusted Rand Index | Unsupervised clustering | 0.695 | — | — | Nontrivial recovery of latent topological sectors |
+| E. Percolation Transition | [insert n] | \(P_{\max}\) drop | Pre-transition vs Post-transition | factor of 4 | t = 35.25 | 5.8 × 10^-43 | Sharp change at transition threshold |
+
+### Derived Metrics
+
+| Metric | Value | Meaning |
+|---|---:|---|
+| Mean reduction in \(P_{\mathrm{tot}}\) under flow | [insert value] | Average topological cooling rate |
+| Mean reduction in \(S_{\mathrm{top}}\) under flow | [insert value] | Entropy dissipation strength |
+| Gauge-invariant classification gain | [insert value] | Improvement over raw-coordinate features |
+| Largest observed effect size | [insert value] | Strongest separation between classes |
+| Stability under perturbation | [insert value] | Sensitivity of barcode features to noise |
+
+### Scientific Interpretation
+
+- \(P_{\max}\) distinguishes rugged from smooth landscapes.
+- \(P_{\mathrm{tot}}\) decreases under gradient flow, consistent with topological simplification.
+- \(S_{\mathrm{top}}\) behaves like a complexity/dispersion measure and tends to decrease during relaxation.
+- Persistence features remain informative under gauge-like rigid transformations, supporting coordinate-free classification.
+- The protein-folding proxy shows that collapse corresponds to a large drop in barcode complexity.
+
 # Observations
 
 * (P_{\max}) behaves like an order parameter for barrier structure.
