@@ -25,7 +25,7 @@ We built four pieces:
 
 # Main results
 
-## Rigorous / structural results
+## Structural results
 
 * The transform is **gauge invariant** by construction.
 * The barcode is **stable under perturbations** of the sampled orbit by standard persistence stability.
